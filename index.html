@@ -111,7 +111,7 @@
 <section id="guides">
   <h2>Counter Strike 2</h2>
 
-<div class="card" onclick="toggleLineups()" style="cursor: pointer;">
+<div class="card" style="cursor: pointer;" onclick="toggleLineups()">
   <h3>Lineups</h3>
   <p>Klicke hier, um die Maps zu sehen.</p>
 
@@ -120,6 +120,7 @@
     <p><a href="#dust2" style="color:#19d9e6; text-decoration:none;">Dust2</a></p>
     <p><a href="#inferno" style="color:#19d9e6; text-decoration:none;">Inferno</a></p>
   </div>
+</div>
 </div>
 
   <div class="card">
@@ -144,6 +145,18 @@
 <footer>
   © 2026 Aimbunker
 </footer>
+
+<script>
+function toggleLineups() {
+  const maps = document.getElementById("lineup-maps");
+
+  if (maps.style.display === "none" || maps.style.display === "") {
+    maps.style.display = "block";
+  } else {
+    maps.style.display = "none";
+  }
+}
+</script>
 
 </body>
 </html>
