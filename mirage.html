@@ -1,89 +1,203 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mirage | AimBunker</title>
   <style>
+    :root {
+      --bg: #050b1d;
+      --card: #0f1a33;
+      --card-2: #111d39;
+      --text: #ffffff;
+      --muted: #aeb9d1;
+      --cyan: #19d9e6;
+      --line: rgba(255,255,255,0.08);
+      --shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0a0f1f;
-      color: white;
-    }
-
-    header {
-      background: #05080f;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    header h1 {
-      margin: 0;
-      color: #19d9e6;
-    }
-
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    .card {
-      background: #111827;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-      margin-top: 10px;
+      background: linear-gradient(180deg, #030817 0%, var(--bg) 100%);
+      color: var(--text);
     }
 
     a {
-      color: #19d9e6;
       text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(100% - 2rem, 1000px);
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(3, 8, 23, 0.9);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: var(--cyan);
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 0 18px rgba(255,0,0,0.35), 0 0 24px rgba(25,217,230,0.15);
+    }
+
+    .back-btn {
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: rgba(25,217,230,0.08);
+      border: 1px solid rgba(25,217,230,0.2);
+      color: var(--cyan);
+      font-weight: 700;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 0 30px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+    }
+
+    .hero p {
+      margin: 0 auto;
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .lineups {
+      padding: 20px 0 50px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .lineup-card {
+      background: linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .lineup-card h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .lineup-card p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .lineup-card img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      display: block;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(25,217,230,0.08);
+      border: 1px solid rgba(25,217,230,0.2);
+      color: var(--cyan);
+      font-size: 0.85rem;
+      font-weight: 700;
     }
 
     footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0 36px;
       text-align: center;
-      padding: 20px;
-      background: #05080f;
-      color: #666;
-      margin-top: 40px;
+      color: #7884a3;
     }
   </style>
 </head>
 <body>
 
-  <header>
+<header>
+  <div class="container">
+    <nav>
+      <a href="index.html" class="brand">
+        <img src="aimbunkerdc.png" alt="AimBunker Logo">
+        <span>AimBunker</span>
+      </a>
+      <a href="index.html" class="back-btn">← Zurück</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
     <h1>Mirage Lineups</h1>
-  </header>
+    <p>
+      Smokes, Flashes und Molotovs für Mirage. Hier kannst du deine wichtigsten Utility-Lineups
+      übersichtlich sammeln und mit Bildern zeigen.
+    </p>
+  </div>
+</section>
 
-  <main>
-    <div class="card">
-      <p><a href="index.html">← Zurück zur Startseite</a></p>
-    </div>
+<section class="container lineups">
+  <div class="lineup-card">
+    <div class="tag">Mirage</div>
+    <h2>Window Smoke</h2>
+    <p>Hier kommt dein Window-Smoke-Lineup rein. Füge darunter dein Bild oder Screenshot ein.</p>
+    <img src="mirage-window.jpg" alt="Mirage Window Smoke">
+  </div>
 
-    <div class="card">
-      <h2>Window Smoke</h2>
-      <p>Hier kannst du später dein Bild und deine Erklärung einfügen.</p>
-      <img src="mirage-window-smoke.jpg" alt="Mirage Window Smoke">
-    </div>
+  <div class="lineup-card">
+    <div class="tag">Mirage</div>
+    <h2>Connector Smoke</h2>
+    <p>Perfekt für Mid Control und A-Split Plays. Hier kannst du dein Connector-Lineup zeigen.</p>
+    <img src="mirage-connector.jpg" alt="Mirage Connector Smoke">
+  </div>
 
-    <div class="card">
-      <h2>Connector Smoke</h2>
-      <p>Hier kommt ein weiteres Lineup rein.</p>
-      <img src="mirage-connector-smoke.jpg" alt="Mirage Connector Smoke">
-    </div>
-  </main>
+  <div class="lineup-card">
+    <div class="tag">Mirage</div>
+    <h2>Jungle / Stairs Smoke</h2>
+    <p>Nutze diesen Bereich für weitere smarte Utility-Lineups auf Mirage.</p>
+    <img src="mirage-jungle.jpg" alt="Mirage Jungle Smoke">
+  </div>
+</section>
 
-  <footer>
-    © 2026 AimBunker
-  </footer>
+<footer>
+  © 2026 AimBunker · Mirage
+</footer>
 
 </body>
 </html>
